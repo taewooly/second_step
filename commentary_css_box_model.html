@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+        </title>
+        <style>
+          h1 /* , a*/ { 
+              /*중복 제거1 : h1, a를 같이 묶는다
+                중복 제거2 : border-width:5px; border-color:red; border-style: solid;를
+                border:5px solid red;로 표현한다. 순서는 중요하지 않음.*/
+                border:5px solid red;
+                padding : 20px; /* 박스 사이 여백 */
+                margin : 20px;  /* 테두리와 테두리사이의 간격 */
+                display:block;  /* block 박스 모델 (화면 전체를 씀) ... h1은 기본*/
+                width:100px;    /* 태그의 width를 조절. -> 외우려 하지 말고 css box model을 image 검색!*/
+                                /* chrome의 검사 기능을 쓰면 Styles탭에서 h1이 어떤 것에 영향을 받고 있는지 알 수 있다.*/
+          }
+        </style>
+    </head>
+
+    <body>
+     <h1>DAW</h1>
+     <h1>DAW</h1>
+     
+     <!-- <p><a href="https://en.wikipedia.org/wiki/Digital_audio_workstation" target="_blank" title="DAW Wikipedia">
+     DAW(Digital audio workstation)</a>은 디지털 오디오의 재생, 녹음 및 편집 등의 작업을 위한 워크스테이션을 말한다. 
+     일반적으로 DAW 기반의 워크스테이션은 컴퓨터 기반 DAW, 통합형 DAW으로 나뉜다.
+     </p>
+    -->
+    </body>
+</html>

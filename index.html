@@ -7,10 +7,22 @@
   <meta charset="utf-8">          <!-- 본문이 UTF-8로 설명되어 있으니 UTF-8로 읽어라. -->
   <style>                         /* style : 이 안에 있는 내용은 css이니 css문법에 맞게 처리하여라. */
     a {
-        color:darkcyan;         /* 색 설정 */
-        text-decoration: none;    /* 모든 밑줄 없애기 */
-                                  /* 세미콜론(;) 으로 효과를 구분한다.*/
+      color:darkcyan;         /* 색 설정 */
+      text-decoration: none;    /* 모든 밑줄 없애기. 세미콜론(;) 으로 효과를 구분한다.*/
     } 
+    .saw {                      /* 웹페이지에 있는 class가 saw인 것들을 선택하는 선택자 */
+      color:gray;
+    }
+    /*.active {
+      color:crimson;
+    }*/
+    #active {
+      color:crimson;
+    }
+    h1 {
+      font-size:45px;
+      text-align:center;
+    }
   </style>
 
         <!-- css는 또 다른 해석 기능을 탑재하기에 부담이지만, a태그 10억개를 수정하는 것보단 폭발적인 효과이다. 
@@ -24,17 +36,34 @@
 
 <body>
 
-  <h1><a href="index.html" style="color:crimson; text-decoration: underline">DAW</a></h1> 
-  <!-- style이 html인지 css인지 모른다. css의 효과를 주고 싶으면 style이라는 속성의 값으로 지정한다.
-   style이라는 속성을 쓰면 그 속성의 값을 웹브라우저는 css의 문법에 따라 해석해서 이 태그에 적용한다.
-   style=""은 css의 속성이 아닌 html의 속성이다. style이란 속성은 그 값으로 반드시 css의 효과가 들어온다.
-   style 태그를 직접사용한 경우 거기에 위치한 태그에서 적용 되기에 선택자가 필요없다.-->
+  <!-- 3. id선택자와 class선택자가 싸우면 id선택자가 이긴다. 클래스(.saw)선택자와 태그(a)선택자가 싸우면 클래스 선택자가 이긴다.
+  id선택자의 값이 active인 태그가 이 웹페이지에서 한번만이라도 등장하면 active란 태그는 쓰면 안된다.
+  쓰지 않기를 권장. id의 값은 한번만 등장하여야만 한다.-->
+  <h1><a href="index.html" class="saw" id="active">DAW</a></h1> 
 
-  <ol>                                                     <!-- 부모는 자식태그 / 자식은 부모태그를 가진다.-->
-    <li><a href="Ableton.html">Ableton Live</a></li>       <!-- 부모태그 <ol>은 ordered list를 의미. 넘버링.-->
-    <li><a href="FL.html">FL Studio</a></li>               <!-- 부모태그 <ul>은 unordered list를 의미. 둘다 li를 구분할 때 쓰는 태그. 목차와 사용자가 겹치면 구분해야하니까. 그루핑.-->
-    <li><a href="Logic.html">Logic Pro</a></li>            <!-- 자식태그 <li>. 목차를 만들때 쓰세요.-->
-  </ol>
+  <!--
+  1. <li><a href="index.html" style="color:crimson; text-decoration: underline">DAW</a></li>
+  : style이 html인지 css인지 모른다. css의 효과를 주고 싶으면 style이라는 속성의 값으로 지정한다.
+    style이라는 속성을 쓰면 그 속성의 값을 웹브라우저는 css의 문법에 따라 해석해서 이 태그에 적용한다.
+    style=""은 css의 속성이 아닌 html의 속성이다. style이란 속성은 그 값으로 반드시 css의 효과가 들어온다.
+    style 태그를 직접사용한 경우 거기에 위치한 태그에서 적용 되기에 선택자가 필요없다. -->
+
+  <!-- 
+  2. <h1><a href="index.html" class="saw active">DAW</a></h1> 
+    class="saw"는 ableton과 fl을 묶어서 property를 주기 위함이다. (HTML)
+    a태그는 2개의 class의 영향을 받고있는데 빨간색인 이유는, active가 saw보다 나중에 등장했기 때문.-->
+
+    <!-- h1태그는 줄바꿈이 되고, a태그는 줄바꿈이 되지 않는 이유 : 각각의 사용하는 부피가 다르다. 
+      일반적인 쓰임과 성격에 따라서, 
+      어떤 태그는 전체를 쓰고 : block level element
+      어떤 태그는 일부를 쓴다 : inline element 
+    기본적인 속성으로 지정해 준 것일뿐, 수정할 수 있다. style 태그에서, h1{display:inline;} 또는 h1{display:block}으로 사용. display:none도 있음.-->
+
+  <ol>                                                <!-- 부모는 자식태그 / 자식은 부모태그를 가진다.-->
+    <li><a href="Ableton.html" >Ableton Live</a></li> <!-- 부모태그 <ol>은 ordered list를 의미. 넘버링.-->
+    <li><a href="FL.html"      >FL Studio   </a></li> <!-- 부모태그 <ul>은 unordered list를 의미. 둘다 li를 구분할 때 쓰는 태그. 목차와 사용자가 겹치면 구분해야하니까. 그루핑.-->
+    <li><a href="Logic.html"   >Logic Pro   </a></li> <!-- 자식태그 <li>. 목차를 만들때 쓰세요.-->
+  </ol>                                               
 
   <h2>DAW</h2>
         <p>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        
+        <style>
+            #grid{
+                border:5px solid pink;
+                display:grid;
+                grid-template-columns: 150px 1fr; /* 하나의 columns에 배치하고 싶으니 grid-templete-???
+                ABLETON은 150PX를 먹고 FLSTUDIO는 나머지를 먹어라.
+                1fr 1fr로 쓰면 반띵
+                2fr 3fr로 쓰면 5등분해서 2:3으로 씀*/
+            }
+            div{
+                border:5px solid gray;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+        <div id="grid"> <!-- 아래 2개의 태그를 나란히 배치 / 어떤 배치를 하고싶으면 그걸 감싸는 부모 태그를 사용.-->
+            <div> ABLETON </div>
+            <div> FLSTUDIO </div>
+        </div>
+
+     <!-- 디자인 목적으로, 어떤 의미도 존재하지 앟는 태그를 사용해야 될 때가 있다. h1을 써서가 아니라.
+    이럴떄 쓰는 무색 무취 태그 <div> : block / <span> : inline elements-->
+    </body>
+</html>
+
+<!-- https://caniuse.com/ : 여러 css나 html or javascript 기술 중 웹브라우저에서 어떤 기술들이 작동되는가를 알려줌.
+무슨 기술을 쓸지를 판단함.-->
