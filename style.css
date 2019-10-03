@@ -1,0 +1,62 @@
+/* 중복의 제거 - css 코드의 재사용.*/
+
+
+body {
+    margin:0;
+  }
+  a {
+    color:darkcyan;         /* 색 설정 */
+    text-decoration: none;    /* 모든 밑줄 없애기. 세미콜론(;) 으로 효과를 구분한다.*/
+  } 
+  .saw {                      /* 웹페이지에 있는 class가 saw인 것들을 선택하는 선택자 */
+    color:gray;
+  }
+  /*.active {
+    color:crimson;
+  }*/
+  #active {
+    color:crimson;
+  }
+  h1 {
+    font-size:45px;
+    text-align:center;
+    border-bottom:1px solid gray; /* DAW 밑 선 긋기. box-model. chrome의 검사 기능을 이용해서 탐구하기.*/
+    margin:0;
+    padding:20px;
+  }
+  ol {
+    border-right:1px solid gray;
+    width:150px;
+    margin:0;
+    padding:20px;
+
+    
+  }
+
+  #grid ol{
+    padding-left: 30px;
+  }
+  #grid{ /* 모든 ol중에 부모가 grid인 태그를 선택하는 선택자.*/
+    display:grid;
+    grid-template-columns: 200px 1fr;
+  }
+  #grid #article{ /*grid 안해도 되는데 명확하게 하기위해서 그냥 쓴다*/
+    padding-left:50px;
+  }
+  
+  /* screen width < 900 */
+  @media(max-width:900px){
+    #grid{ /* 모든 ol중에 부모가 grid인 태그를 선택하는 선택자.*/
+    display:block;
+    grid-template-columns: 200px 1fr;
+  }
+    #grid ol{
+      border-right:none;
+    }
+    h1 {
+      border-bottom:none;
+    }
+
+  }
+
+

@@ -5,24 +5,9 @@
 <head>
   <title>DAW Introduction</title> <!-- 웹브라우저 탭의 제목. 본문의 제목이 무엇인지 설명. -->
   <meta charset="utf-8">          <!-- 본문이 UTF-8로 설명되어 있으니 UTF-8로 읽어라. -->
+  <link rel="stylesheet" href="style.css">
   <style>                         /* style : 이 안에 있는 내용은 css이니 css문법에 맞게 처리하여라. */
-    a {
-      color:darkcyan;         /* 색 설정 */
-      text-decoration: none;    /* 모든 밑줄 없애기. 세미콜론(;) 으로 효과를 구분한다.*/
-    } 
-    .saw {                      /* 웹페이지에 있는 class가 saw인 것들을 선택하는 선택자 */
-      color:gray;
-    }
-    /*.active {
-      color:crimson;
-    }*/
-    #active {
-      color:crimson;
-    }
-    h1 {
-      font-size:45px;
-      text-align:center;
-    }
+
   </style>
 
         <!-- css는 또 다른 해석 기능을 탑재하기에 부담이지만, a태그 10억개를 수정하는 것보단 폭발적인 효과이다. 
@@ -59,26 +44,28 @@
       어떤 태그는 일부를 쓴다 : inline element 
     기본적인 속성으로 지정해 준 것일뿐, 수정할 수 있다. style 태그에서, h1{display:inline;} 또는 h1{display:block}으로 사용. display:none도 있음.-->
 
-  <ol>                                                <!-- 부모는 자식태그 / 자식은 부모태그를 가진다.-->
-    <li><a href="Ableton.html" >Ableton Live</a></li> <!-- 부모태그 <ol>은 ordered list를 의미. 넘버링.-->
-    <li><a href="FL.html"      >FL Studio   </a></li> <!-- 부모태그 <ul>은 unordered list를 의미. 둘다 li를 구분할 때 쓰는 태그. 목차와 사용자가 겹치면 구분해야하니까. 그루핑.-->
-    <li><a href="Logic.html"   >Logic Pro   </a></li> <!-- 자식태그 <li>. 목차를 만들때 쓰세요.-->
-  </ol>                                               
+
+  <div id="grid"> <!-- ol과 div를 감싼다 -->
+    <ol>                                                <!-- 부모는 자식태그 / 자식은 부모태그를 가진다.-->
+      <li><a href="Ableton.html" >Ableton Live</a></li> <!-- 부모태그 <ol>은 ordered list를 의미. 넘버링.-->
+      <li><a href="FL.html"      >FL Studio   </a></li> <!-- 부모태그 <ul>은 unordered list를 의미. 둘다 li를 구분할 때 쓰는 태그. 목차와 사용자가 겹치면 구분해야하니까. 그루핑.-->
+      <li><a href="Logic.html"   >Logic Pro   </a></li> <!-- 자식태그 <li>. 목차를 만들때 쓰세요.-->
+    </ol>                                               
+
+  <div id="article">
+ <!-- 내용을 감싼다 -->
 
   <h2>DAW</h2>
-        <p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/pLw_QOxfA9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
-        </p>
-  <img src="DAW.jpg" width="70%">                          <!-- 이미지의 속성 src, width -->
-
-  <p><a href="https://en.wikipedia.org/wiki/Digital_audio_workstation"   
-        target="_blank" 
-        title="DAW Wikipedia">                             <!-- 도움말을 참조하면 됨! a는 anchor. href는 hypertext는 link. + 이값을 참조 reference.-->
-    DAW(Digital audio workstation)</a>                     <!-- target은 클릭했을때 새 탭으로 열것인지. title은 클릭하기 전에 무엇인지 알려주고 싶다.-->
-    은 디지털 오디오의 재생, 녹음 및 편집 등의 작업을 위한 워크스테이션을 말한다. 일반적으로 DAW 기반의 워크스테이션은 컴퓨터 기반 DAW, 통합형 DAW으로 나뉜다.
-  </p>
+  <img src="DAW.jpg" width="90%"> <br> <!-- 이미지의 속성 src, width -->
+  <a href="https://en.wikipedia.org/wiki/Digital_audio_workstation"    
+    target="_blank" title="DAW Wikipedia">DAW(Digital audio workstation)</a> <!-- 도움말을 참조하면 됨! a는 anchor. href는 hypertext는 link. + 이값을 참조 reference.-->
+    은 디지털 오디오의 재생, 녹음 및 편집 등의 작업을 위한 워크스테이션을 말한다.  <!-- target은 클릭했을때 새 탭으로 열것인지. title은 클릭하기 전에 무엇인지 알려주고 싶다.-->
+    일반적으로 DAW 기반의 워크스테이션은 컴퓨터 기반 DAW, 통합형 DAW으로 나뉜다.
   
-<p style="margin-top:45px;">    
+
+  <p><iframe width="560" height="315" src="https://www.youtube.com/embed/pLw_QOxfA9A" frameborder="0" 
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+  <p style="margin-top:30px;"> 
   컴퓨터 기반 DAW는 PC, ADC/DAC(오디오 인터페이스), 오디오 편집 소프트웨어 등 3가지를 필요로 한다.
   <b>ADC/DAC(Audio to Digital/Digital to Audio signal Conversion)</b>은 
   아날로그 오디오 신호와 디지털 오디오 신호를 상호 변환이 가능케하는 오디오 인터페이스를 뜻한다.
@@ -86,13 +73,17 @@
   오디오 출력을 위한 "Audio Out"을 기본적으로 제공하며, 경우에 따라 미디(마스터키보드, 드럼머신 등등) 
   신호를 받기 위한 "MIDI In"과 출력을 위한 "MIDI Out", 마이크로폰 입력을 위한 "MIC In"을 제공하는 경우도 있다. 
   (MIC In은 마이크로폰 입력 신호의 증폭을 위한 "마이크 프리앰프를 제공"한다는 점에서 Line In과 차별된다.)
-  <b>오디오 편집 소프트웨어</b>는 통상 운영 체제나, 경우에 따라 오디오 인터페이스에 종속되어 사용이 가능한 컴퓨터 프로그램이다. 일반적으로 미디의 입력, 멀티트랙 편집, 오디오의 녹음, 멀티트랙 편집, 가상악기나 이펙터 사용, 믹싱과 마스터링 기능을 제공한다. 이것은 오디오 자원, 가상악기, 이펙터 사용량에 따라 PC의 높은 사양을 요구하기 때문에 고성능의 CPU, 큰 용량의 램을 사용하는 것이 바람직하다. 일반적으로 사용자의 운영 체제에서 실행가능한 프로그램으로 해야 하며, 일부 프로그램은 특정 오디오 인터페이스가 아니면 실행이 불가능한 경우도 있다. (예: 프로툴)
+  <b>오디오 편집 소프트웨어</b>는 통상 운영 체제나, 경우에 따라 오디오 인터페이스에 종속되어 사용이 가능한 컴퓨터 프로그램이다. 
+  일반적으로 미디의 입력, 멀티트랙 편집, 오디오의 녹음, 멀티트랙 편집, 가상악기나 이펙터 사용, 믹싱과 마스터링 기능을 제공한다. 
+  이것은 오디오 자원, 가상악기, 이펙터 사용량에 따라 PC의 높은 사양을 요구하기 때문에 고성능의 CPU, 큰 용량의 램을 사용하는 것이 바람직하다. 
+  일반적으로 사용자의 운영 체제에서 실행가능한 프로그램으로 해야 하며, 일부 프로그램은 특정 오디오 인터페이스가 아니면 실행이 불가능한 경우도 있다. (예: 프로툴)
+  <b>통합형 DAW</b>는 오디오 믹서, 컨트롤, 오디오 신호 변환기와 데이터 기억 장치를 하나의 장비에 통합한 환경을 말한다. 
+  이것은 컴퓨터 기반 DAW와 다르게 PC 사양에 영향을 받지 않으며, 가장 최적화된 작업 환경을 제공하지만, 가격이 높다는 단점이 있다. 
+  최근에는 GUI 기반의 출력 장치도 같이 나와 별도의 PC나 모니터를 요구하지 않는 장비가 나오고 있다.
 </p>
 
-<p>
-    <b>통합형 DAW</b>는 오디오 믹서, 컨트롤, 오디오 신호 변환기와 데이터 기억 장치를 하나의 장비에 통합한 환경을 말한다. 이것은 컴퓨터 기반 DAW와 다르게 PC 사양에 영향을 받지 않으며, 가장 최적화된 작업 환경을 제공하지만, 가격이 높다는 단점이 있다. 최근[언제?]에는 GUI 기반의 출력 장치도 같이 나와 별도의 PC나 모니터를 요구하지 않는 장비가 나오고 있다.
-</p>
-        
+</div>
+</div> 
 
 
 <!-- DISQUS 댓글 시스템 -->

@@ -1,0 +1,29 @@
+<!-- 반응형 디자인은 화면의 크기에 따라서 웹페이지의 각 요소들이 반응해서 동작하게 한다! -->
+<!-- mediaquary -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            div{
+                border:5px solid green;
+                font-size:60px;
+            }
+        /* screen width > 800px      화면의 크기가 800px보다 크다면은 = */
+        @media(min-width:800px) { /* 화면의 크기가 최소 800px */
+            div{
+              display:none;
+          }
+        }
+          
+        </style>
+    </head>
+
+    <body>
+        <div>
+            Responsive Web
+        </div>
+    </body>
+</html>
